@@ -1,0 +1,15 @@
+.heading2{
+    background-color: #ff9999;
+    padding: 8px;
+    text-align: center;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.left{
+    width: 76%;
+}
+
+.right {
+    width: 26%;
+}
