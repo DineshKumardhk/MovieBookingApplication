@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { Button, Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select, TextField } from '@material-ui/core';
-import Genres from '../../common/genre.js'
-import Artists from '../../common/artists.js'
+import { Button, TextField } from '@material-ui/core';
+import Genres from './DropdownList1.js'
+import Artists from './DropdownList.js'
+
 
 const useStyles = makeStyles({
   root: {
@@ -26,17 +26,7 @@ const useStyles = makeStyles({
 
 export default function SimpleCard() {
   const classes = useStyles();
-
-  // CheckBox
-  const [checked, setChecked] = useState(false);
-  const handleChange = event => {
-    setChecked(event.target.checked);
-  }
-
-
   
-    
-
   return (
     <Card className={classes.root}>
       <CardContent>
@@ -46,56 +36,15 @@ export default function SimpleCard() {
         FIND MOVIES BY:
         </Typography>
 
-        <form style={{}}>
+        <form>
             {/* Search by Movie Name */}
             <TextField id="standard-basic"  style={{width:225}} label="Movie Name" /><br/>
 
-
-
             {/* Search by Movie Genres */}
-            <FormControl className={classes.formControl} style={{width:225}}>
-              <InputLabel id="demo-simple-select-label" >Genres</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                {Genres.map(mov => (
-                <MenuItem value={mov.name}>
-                  <FormControlLabel
-                  label={mov.name}
-                  control={
-                    <Checkbox checked={checked} 
-                      color="primary" 
-                      onChange={handleChange}
-                    />
-                  }>
-                  </FormControlLabel>
-                </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-
+            <Genres />
 
             {/* Search by Movie Artists */}
-            <FormControl className={classes.formControl}
-             style={{width:225}}
-             >
-              <InputLabel id="movieArtists" >Artists</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                {Artists.map(mov => (
-                <MenuItem value={mov.first_name+" "+mov.last_name}>
-                <FormControlLabel
-                 label={mov.first_name+" "+mov.last_name}
-                 control={<Checkbox checked={checked} color="primary" onChange={handleChange}/>}></FormControlLabel>
-                </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-
-
+            <Artists />
 
             {/* Search by Movie Date */}
             <TextField
