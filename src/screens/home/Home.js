@@ -3,6 +3,7 @@ import Header from '../../common/header/Header';
 import "./Home.css";
 import Grid from './Grid.js';
 import Grid1 from './Grid1';
+import FilterCard from './Filter.js'
 
 
 
@@ -16,7 +17,8 @@ class Home extends Component {
                 <Grid />
                 <div className="flex-container">
                     <div className="left"><Grid1 /></div>
-                    <div className="right"></div>
+                    <div className="right"><div><FilterCard /></div></div>
+                    
                 </div>
             </div>
         );

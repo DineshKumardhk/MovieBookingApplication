@@ -11,5 +11,13 @@
 }
 
 .right {
-    width: 26%;
+    width: 24%;
+    display: flex;
+    justify-content: center;
+    margin-right: 70px;
+    margin-top: 50px;
+}
+
+.flex-container{
+    display: flex;
 }
