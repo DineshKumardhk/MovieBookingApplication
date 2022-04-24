@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
+import { ImageList } from '@material-ui/core';
+// import GridList from '@material-ui/core/GridList';
+import { ImageListItem } from '@material-ui/core';
+// import GridListTile from '@material-ui/core/GridListTile';
+import { ImageListItemBar } from '@material-ui/core';
+// import GridListTileBar from '@material-ui/core/GridListTileBar';
 import MoviesData from '../../common/moviesData.js';
 
 const styles = theme => ({
@@ -22,20 +25,20 @@ function SingleLineGridList(props) {
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={4}>
+      <ImageList className={classes.gridList} cols={4}>
         {MoviesData.map(tile => (
-          <GridListTile style={{margin: 16, height: 350}} key={tile.poster_url}>
+          <ImageListItem style={{margin: 16, height: 350, minWidth: 200}} key={tile.poster_url}>
             <img src={tile.poster_url} alt={tile.title} />
-            <GridListTileBar
+            <ImageListItemBar
               title={tile.title}
               classes={{
                 root: classes.titleBar,
                 title: classes.title,
               }}
             />
-          </GridListTile>
+          </ImageListItem>
         ))}
-      </GridList>
+      </ImageList>
     </div>
   );
 }

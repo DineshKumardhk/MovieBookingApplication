@@ -7,7 +7,7 @@
 }
 
 .left{
-    width: 76%;
+    min-width: 76%;
 }
 
 .right {
@@ -20,4 +20,5 @@
 
 .flex-container{
     display: flex;
+    width: 100%;
 }
